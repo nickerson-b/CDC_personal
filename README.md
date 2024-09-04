@@ -1,5 +1,18 @@
 # Personal Copy of 442 Class Project Test Commit
 
+When done as a group in class, this project was intended to teach collaborative software engineering abilities. Now, I will be using this project as a launching point to further develop my web development skills.
+
+### Day 1: 
+Retrieve files and familiarize myself with the project again. Reviewed code written by myself and my teammates, and identified sections to be redone.
+Reviewing the entity relationship diagrams I created, we can see that to get this project back up and running, there are 2 main areas of concern.
+1. No longer having access to the previous mongoDB database, I need to get a database of news articles functioning again. 
+2. The site was hosted by another student using Render. I need to find a new web host.
+
+In the longer term, as I restore base functionality, I will need to rethink the basic concept for the product. Originally, the idea was to make a tool that would help students exit their news bubbles while gauging interest in current topics. While this worked for the class, the resources we had access to and the time frame we were working under limited the feasibility of the design. Hopefully with some reworking I can make a product that both reflects my own values/designs and even if not intended for profit making, could find use by a wide audience.
+
+
+# Original Design Document
+
 Deployed Website: https://careordontcare.onrender.com/
 
 # Abstract
