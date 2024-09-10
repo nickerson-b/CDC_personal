@@ -1,6 +1,43 @@
 # Personal Copy of 442 Class Project Test Commit
 
 When done as a group in class, this project was intended to teach collaborative software engineering abilities. Now, I will be using this project as a launching point to further develop my web development skills.
+### Day 4:
+Exploring the NASA APIs, I discovered that while I thought (and am largely more interested in) the rover images would be a good basis for a project, they're all rather.. similar. The Astronomy Photo of the day has images in a range that could be classified and grouped and possibly labeled for use in machine learning. Generally speaking, it's just mroe fun to work with. 
+
+It appears that the APOD API used to return tags along with images, but this feature has been discontinued. For building search tools in the future, tags will either need to be added, or images searched for matching explanations. 
+
+Feature Brainstorming (with relative time rankings):
+- View one random APOD image (2)
+- View the explanations/descriptions for the images (2)
+- View non-repeating images (1)
+- Make an account with a username and password (3)
+- Log in/out of account (2)
+- Like an image (2)
+- View liked images (1)
+- Favorite images (2)
+- View favorite images (1)
+
+Database requirements:
+- Store user data
+- Store the links to images and data about them
+- Associate users with images and preferences about those images
+
+Site requirements:
+- Request data from the NASA API
+- Connect to mysql database
+- Request data from mysql database
+- Have a logged in/not logged in view
+
+Possible Entity Relationship Diagram for storing users, APOD images, and their relationships
+![Possible ERD](Images/apod.drawio.png)
+
+
+### Day 3:
+Over the last 3 days I have fully re-familiarized myself with the project and have planned a trajectory for the continued development. The old Care/DontCare project was constructed with Express JS, and is a framework I am familiar enough with to continue development in. The database used previously to store news articles and user data was MongoDB, which as a noSQL, and non relational database, doesn't make much sense for what I had in mind. I am also familiar with mysql server and have a machine I can dedicate to running the server, so I will use that as my database moving forward. 
+
+The new concept for the project will use similar functionality at its base. Users will be prompted to choose whether or not they like something displayed to them, however instead of caring or not caring about news topics, users will say whether they found an image from NASAs Mars rovers interesting or not. This data can then be used to recommend images, or find popular images in the catalogue of images. 
+
+I am choosing to pursue this idea because it allows for continued development starting with basic skills and progressing over time. I can start off with practicing web development, API use, data storage, and design. Later I can work on search and recommendation systems to show users interesting images, and eventually incorporate machine learning to identify interesting images. 
 
 ### Day 1: 
 Retrieve files and familiarize myself with the project again. Reviewed code written by myself and my teammates, and identified sections to be redone.
