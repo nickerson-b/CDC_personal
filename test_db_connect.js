@@ -1,7 +1,6 @@
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
-import { query } from 'express';
 
 dotenv.config()
 
@@ -38,6 +37,10 @@ async function test_get_data() {
     //  need to redirect it through my own api.
     // Count returns random subset of images, cannot be used with dates
 
+
+    const d = new Date(); // gets the current date & time. Month is 0 indexed
+    console.log(`The date today is:${d.getFullYear()}, ${(d.getMonth() + 1)}, ${d.getDate()}`)
+
     const url = `https://api.nasa.gov/planetary/apod`; // url to get data from 
     const api_key = process.env.NASA_API_KEY;
     const date = '2002-06-17';
@@ -71,11 +74,10 @@ async function test_get_data() {
 }
 
 await test_get_data();
-connection.end((error) => {
+await connection.end((error) => {
   if (error) {
     console.log(`Issue with ending DB connection: ${error}`);
-  } else {
-    console.log(`DB connection closed successfully.`);
   }
+  console.log(`DB connection closed successfully.`);
 });
-console.log("connection ended");
+console.log(`connection ended`);

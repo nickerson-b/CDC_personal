@@ -1,6 +1,17 @@
 # Personal Copy of 442 Class Project Test Commit
 
 When done as a group in class, this project was intended to teach collaborative software engineering abilities. Now, I will be using this project as a launching point to further develop my web development skills.
+
+### Day 5:
+Implement tables in database. Attempt to get "thin vertical slice" of app working, with app connecting to DB and the APOD API.
+To start off, I want to disable much of the functionality that was present in the previous final project. I heavily modified the app.js file to 
+a. remove everything that I wouldn't use while testing basic functionality and
+b. Anything I didn't fully understand
+
+Working my way through constructing the homepage for the site, I found that the project base does not use view engines. Personally, I am ok with this. Some files appear redundant because of it, but I believe with a clearer file structure, static html files can be retrieved, modified, and sent with res.send instead of res.render. The static page will be read from the static folder with file promises, then the dynamic content will be added and the new html will be sent as a response. I am aware that this can add complexity when using scripts in the html files, but those issues will at least be in my control instead of outsourced to a template engine. 
+
+Interesting discovery for today: my express settings have my app running such that a trailing slash is ignored.
+
 ### Day 4:
 Exploring the NASA APIs, I discovered that while I thought (and am largely more interested in) the rover images would be a good basis for a project, they're all rather.. similar. The Astronomy Photo of the day has images in a range that could be classified and grouped and possibly labeled for use in machine learning. Generally speaking, it's just mroe fun to work with. 
 
