@@ -2,7 +2,15 @@
 
 When done as a group in class, this project was intended to teach collaborative software engineering abilities. Now, I will be using this project as a launching point to further develop my web development skills.
 
-### Day 5:
+### Update 6:
+Current (large scale) feature list to implement:
+- [x] Add page loading script
+- [] Make buttons display new images
+- [] Add data to database when buttons pressed
+
+To implement the desired functionality on homepage loading, that being to display the Astronomy Picture of the Day, no connection to the database is needed. The data is retrieved from the NASA API, and is then added to a template html of the homepage. The CSS needed to be reworked to display the image and description properly, which means the HTML also had to be updated. Reworking the flexboxes took far longer than expected, and while I am still fighting with mysterious margins and maddening padding, I have the basic layout working. Next steps will be making the page look nice, and adding the navbar back in at the top. Before I add navbar functionality (which will require the other pages) I will refocus on the button and db functionality. 
+
+### Update 5:
 Implement tables in database. Attempt to get "thin vertical slice" of app working, with app connecting to DB and the APOD API.
 To start off, I want to disable much of the functionality that was present in the previous final project. I heavily modified the app.js file to 
 a. remove everything that I wouldn't use while testing basic functionality and
@@ -12,7 +20,7 @@ Working my way through constructing the homepage for the site, I found that the 
 
 Interesting discovery for today: my express settings have my app running such that a trailing slash is ignored.
 
-### Day 4:
+### Update 4:
 Exploring the NASA APIs, I discovered that while I thought (and am largely more interested in) the rover images would be a good basis for a project, they're all rather.. similar. The Astronomy Photo of the day has images in a range that could be classified and grouped and possibly labeled for use in machine learning. Generally speaking, it's just mroe fun to work with. 
 
 It appears that the APOD API used to return tags along with images, but this feature has been discontinued. For building search tools in the future, tags will either need to be added, or images searched for matching explanations. 
@@ -40,17 +48,17 @@ Site requirements:
 - Have a logged in/not logged in view
 
 Possible Entity Relationship Diagram for storing users, APOD images, and their relationships
-![Possible ERD](Images/apod.drawio.png)
+![Possible ERD](public/images/apod.drawio.png)
 
 
-### Day 3:
+### Update 3:
 Over the last 3 days I have fully re-familiarized myself with the project and have planned a trajectory for the continued development. The old Care/DontCare project was constructed with Express JS, and is a framework I am familiar enough with to continue development in. The database used previously to store news articles and user data was MongoDB, which as a noSQL, and non relational database, doesn't make much sense for what I had in mind. I am also familiar with mysql server and have a machine I can dedicate to running the server, so I will use that as my database moving forward. 
 
 The new concept for the project will use similar functionality at its base. Users will be prompted to choose whether or not they like something displayed to them, however instead of caring or not caring about news topics, users will say whether they found an image from NASAs Mars rovers interesting or not. This data can then be used to recommend images, or find popular images in the catalogue of images. 
 
 I am choosing to pursue this idea because it allows for continued development starting with basic skills and progressing over time. I can start off with practicing web development, API use, data storage, and design. Later I can work on search and recommendation systems to show users interesting images, and eventually incorporate machine learning to identify interesting images. 
 
-### Day 1: 
+### Update 1: 
 Retrieve files and familiarize myself with the project again. Reviewed code written by myself and my teammates, and identified sections to be redone.
 Reviewing the entity relationship diagrams I created, we can see that to get this project back up and running, there are 2 main areas of concern.
 1. No longer having access to the previous mongoDB database, I need to get a database of news articles functioning again. 
