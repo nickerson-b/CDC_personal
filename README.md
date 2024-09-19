@@ -1,12 +1,116 @@
-# Personal Copy of 442 Class Project Test Commit
+# APOD data S&R systems project (reworked university project)
+Welcome to the (a) Astronomy Picture Of the Day viewing webapp. When I worked on this project with a group in class, it was intended to teach collaborative software engineering abilities. Now, I will be using this project as a launching point to further hone my web development skills. The end goal is to have a functional (though maybe not useful) place for interested users to go to view the picture of the day, and get recommendations for other images with interesting explanations they might enjoy. 
 
-When done as a group in class, this project was intended to teach collaborative software engineering abilities. Now, I will be using this project as a launching point to further develop my web development skills.
+Goals for this project:
+- Become a better web developer by practicing creating an Express app from scratch.
+- Practice my SQL and database management skills for a site with user accounts and simple data needs.
+- Research and implement basic security measures for the site and database.
+- Experiment with content based to start and eventually with enough data, user based Search and Recommendation systems.
+
+Follow along with my development journey!
+
+## Design Documents
+### Overview
+As a web app, my version of the APOD viewer and Search & Recommendation system will serve users APOD images and allow them to like and discover more APOD images. This project exists as an avenue for me to practice and refine my coding abilities. As such, it is not a product designed with a widespread userbase in mind, nor is it intended to meet many stakeholder needs other than my own, though I will be designing for a target audience. At the end of this project, I will have demonstrated my ability to design and create a web app, use and manage data, and recommend users content based off their preferences. 
+
+### Scope
+The MVP for this project will be an express web app that displays images and image blurbs produced from NASAs APOD API. Users will be able to like images they find interesting, either due to the image or explanation. They will be able to log in and view those images, select their favorites, and see recommendations based off their liked images. 
+
+For an MLP, features that allow users to report problems with image displays, search images by category, and be recommended images based on other similar users are necessary. Additionally, an MLP would require stylistic branding and smooth navigation, as well as minimal loading delays.
+
+Regardless of MVP or MLP, the product is not marketable, and there is no intention of attempting to monetize any aspect of the site. It does not have a dedicated server, so scalability is minimal. This is one project of many I am working on for my portfolio, and as such the functions must all pertain exactly to the stated goal of displaying APOD images.
+
+### Stakeholders
+The primary stakeholders for this project are those who:
+- enjoy content produced by NASA
+- want to find desktop background images of space
+- want to learn more about space generally
+
+The secondary stakeholders for this project are:
+- Me
+- Recruiters/Interviewers
+
+### DB Schema
+The data needs for this project are fairly straightforward. A relational DB (sql) will maintain a table of users, APOD images, and views (the relationship between them).
+
+### Agile
+Though I want to demonstrate my understanding of the Agile workflow, because this is an individual project without need for SCRUM style cooperative engineering, I am going to keep the unnecessary baggage to a minimum and simple create a vision to refer back to if I get lost while designing.
+
+Themes/Overarching project goals: Exploration, Personalization, Refined Simplicity
+Epics/Large functional feature groups: Account Management, Image Feed, Image Recall, Recommendations, Content Based Personalization, Visuals
+
+### Example User Stories
+As a person with minimal knowledge of astronomy, I want a simple site that allows me to explore astronomy topics so that I can learn about space in an approachable format. 
+Given I visited this site with minimal astronomy knowledge, when I spend some time reading explanation and liking images I then will have a better idea of what astronomy topics interest me.
+
+As a person looking to find cool astronomy images, I want a resource that tracks my liked and favorite images from APOD so that I can find and retrieve them quickly. 
+Given I visit this site often looking for cool images, when I want to use them I will be able to quickly log in and view all my liked and favorited images. 
+
+## Feature Backlog
+### Criteria
+As with most feature backlogs, each feature will be scored by some metric. What works best for me is a simple 1-2-3 score, as well as an MLP/MVP marker. 
+A 1 task is the easiest to complete, taking at most a couple hours. Tasks that have been mostly implemented elsewhere on the site or in other projects, and things I am certain how to implement might also fall into this category. 
+A 2 task is one that might take up to half a workday to complete. These tasks might include the creation of new resources, writing longer documents, or the completion of a task that I do not already know how to implement. 
+A 3 task is one that could take up to a day to complete. These are tasks that I will need to learn something to complete, will require large modifications to site structures, or are likely to require extensive debugging. 
+Any task predicted to take more than a day of work should be broken into smaller tasks, or put in Future Development until resources can be dedicated to solving the problem if I lack the knowledge on how to approach it. 
+A V marker shows that the feature is necessary for a Minimum Viable Product.
+An L marker shows that the feature is necessary for a Minimum Loveable Product.
+
+### Feature List
+Functional Features:
+- [x] Homepage displays APOD image upon loading (2, V)
+- [x] Explanation and title displayed alongside image on Homepage (1, V)
+- [x] Like and Next buttons display under explanation (1, V)
+- [x] Homepage html is responsive (2, L)
+- [ ] Next button produces a random image from the APOD api (1, V)
+- [ ] Next button produces an image the user has not seen from the APOD api (2, L)
+- [ ] Nav Bar includes Create Account option which leads to an account creation workflow if not signed in (1, V)
+- [ ] User can make an account with a username and password (2, V)
+- [ ] Nav Bar includes Sign In option leading to a sign in workflow if not signed in (1, V)
+- [ ] User can sign out of their account (2, V)
+- [ ] Nav bar includes sign out option if user is signed in (1, V)
+- [ ] User can sign into a previously made account with username and password stored in DB (2, V)
+- [ ] Session implemented to allow user to be signed in across site (3, V)
+- [ ] Pressing either Like or Next updates the Viewed db table if signed in (1, V)
+- [ ] Add profile page route (1, V)
+- [ ] Nav bar includes profile option (1, V)
+- [ ] Profile page displays liked images (2, V)
+- [ ] Sorting options displayed on profile liked page (2, L)
+- [ ] Liked images can be sorted by date liked, asc or dsc (1, L)
+- [ ] Liked images can be sorted by date of APOD, asc or dsc (1, L)
+- [ ] Sorting options displayed on profile Favorited page (2, L)
+- [ ] Favorited images can be sorted by date favorited, asc or dsc (1, L)
+- [ ] favorited images can be sorted by date of APOD, asc or dsc (1, L)
+- [ ] Favorite button displayed when like button is clicked (2, V)
+- [ ] clicking favorite button updates the view table in the DB (1, V)
+- [ ] Favorites can be viewed from profile page (2, V)
+- [ ] Add un-like button when viewing image from profile likes (1, L)
+- [ ] Add un-favorite button when viewing image from profile favorites (1, L)
+- [ ] Un-like button functionality (1, L)
+- [ ] Un-Favorite button functionality (1, L)
+- [ ] Whenever an APOD image is displayed, ensure it is in the images db table (1, V)
+- [ ] Store tokenized image explanations in db (2, V)
+- [ ] Store dictionary of tokens in db (2, V)
+- [ ] Create content based recommendation script (3, V)
+- [ ] Use recommendation script when next button is clicked 50% of the time (3, V)
+- [ ] Display message when next image is produced by a recommendation (1, V)
+
+## Future Development
+These are ideas I hope to add to the backlog in the future, but either are not part of the MVP or are too complex for me to break down into tasks at this moment. 
+- Allow users to create folders of images
+- Predict categories based off explanations to implement search functionalities 
+
+## Development Updates
+As regularly as I feel (with the goal of every day) I will be updating the status of the project, the current tasks and my general thoughts on where my work is headed. 
+
+### Update 7:
+I spent some time refreshing my HTML and CSS skills to rework the homepage for its new purpose. Before continuing much further with restoring functionality, I think it is necessary to spend some time updating the design document and constructing a task backlog so I can better envision what I want to work towards and the most efficient way to get there. 
 
 ### Update 6:
 Current (large scale) feature list to implement:
 - [x] Add page loading script
-- [] Make buttons display new images
-- [] Add data to database when buttons pressed
+- [ ] Make buttons display new images
+- [ ] Add data to database when buttons pressed
 
 To implement the desired functionality on homepage loading, that being to display the Astronomy Picture of the Day, no connection to the database is needed. The data is retrieved from the NASA API, and is then added to a template html of the homepage. The CSS needed to be reworked to display the image and description properly, which means the HTML also had to be updated. Reworking the flexboxes took far longer than expected, and while I am still fighting with mysterious margins and maddening padding, I have the basic layout working. Next steps will be making the page look nice, and adding the navbar back in at the top. Before I add navbar functionality (which will require the other pages) I will refocus on the button and db functionality. 
 
