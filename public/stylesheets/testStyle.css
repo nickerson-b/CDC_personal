@@ -1,8 +1,3 @@
-/* Page has 2 main divs: one on top for the intro, one under for the image and its text, as well as the buttons
-    The top content will always be a vertical flexbox with the page title and the small blurb.
-    The bottom content will have one box for the image, then another with 3 boxes in it for the title, description and buttons.
-    When media width is sub 1k, the bottom flexbox will display these boxes in a column. 
-    When sub 1k, they will be displayed in a row. */
 body {
     font-family: "Encode Sans", sans-serif;
     background-color: #f5f5f9;
@@ -25,17 +20,16 @@ body {
 .box {
     display: flex;
     padding: 1.4rem 1.4rem 0rem 1.4rem;
+    height: auto;
+    width: auto;
 }
 
 .box p {
     font-size: 1.2rem;
 }
 
-.box img {
-    flex-grow: 1;
-    object-fit: contain;
-    max-height: 90vh;
-    max-width: 90vw;
+.box.image-description {
+    padding: 0;
 }
 
 h1 {
@@ -54,6 +48,26 @@ p {
     margin: 0;
 }
 
+.main-content img {
+    width: 65vw;
+    max-height: 90vw;
+    object-fit: contain;
+}
+
+.main-content .box{
+    padding: 0;
+    margin: 1vw;
+}
+
+.main-content .image {
+    align-items: flex-start;
+    margin-top: 1vw;
+}
+
+.main-content .image-description {
+    margin-top: 0vw;
+}
+
 .main-content h2 {
     margin-top: 0;
     margin-bottom: 0;
@@ -62,16 +76,8 @@ p {
 }
 
 .main-content p {
-    flex-basis: 70%;
+    flex-basis: 90%;
     line-height: 2rem;
-}
-
-.main-content .image {
-    flex: 0 0 50%
-}
-
-.main-content .wrapper {
-    flex: 0 0 50%;
 }
 
 .button {
@@ -92,35 +98,82 @@ p {
     transform: scale(1.1);
 }
 
-/* slight changes for mobile view */
-@media only screen and (max-width: 600px) {
-    /* currently all changes that apply to tablets work for small displays */
-}
-
 /* changes for tablets or small desktops */
 @media only screen and (max-width: 1000px) {
+    body {
+        margin: 0;
+    }
+
     h1 {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
+    }
+
+    .page {
+        padding: 5vw 4vw 10vw 4vw;
     }
 
     .wrapper {
         flex-direction: column;
         gap: .5vw;
+        height: auto;
+        width: auto;
     }
 
     .box {
-        padding: 1.2rem 1.4rem 0rem 0.8rem;
+        display: flex;
+        padding: 0;
+        margin-bottom: 1vw;
+        height: auto;
+        width: auto;
     }
 
     .box p {
-        flex-basis: 90%;
-        margin: 0;
-        font-size: .85rem;
-        line-height: 1.4rem;
+        flex-basis: 95%;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
     }
 
     .box h1 {
         font-size: 1.8rem;
         flex-basis: 90%;
+    }
+
+    .main-content .box {
+        margin: 0 0 1vw 0;
+    }
+
+    .main-content img {
+        width: 100%;
+        max-height: 75vw;
+        object-fit: contain;
+    }
+
+    .main-content .image {
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+/* slight changes for mobile view */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .page {
+        padding: 5vw 7vw 10vw 7vw;
+    }
+
+    .box {
+        margin-bottom: 3vw;
+    }
+
+    .box p {
+        font-size: .85rem;
+        line-height: 1.4rem;
+    }
+
+    .main-content .box {
+        margin: 0 0 3vw 0;
     }
 }
