@@ -1,3 +1,4 @@
+# *This project is on hiatus due to time restrictions*
 # APOD data S&R systems project (reworked university project)
 Welcome to the (a) Astronomy Picture Of the Day viewing webapp. When I worked on this project with a group in class, it was intended to teach collaborative software engineering abilities. Now, I will be using this project as a launching point to further hone my web development skills. The end goal is to have a functional (though maybe not useful) place for interested users to go to view the picture of the day, and get recommendations for other images with interesting explanations they might enjoy. 
 
